@@ -3,10 +3,11 @@ package com.example.lesson_32
 interface Contract {
     interface View{
 //        fun changeCounterValue(counterValue:Int)
-        fun showImg(text:String)
+        fun showCount(count:Int)
     }
 
     interface Presenter {
-        fun searchImg(text:String)
+        fun plusCount()
+        fun minusCount()
     }
 }

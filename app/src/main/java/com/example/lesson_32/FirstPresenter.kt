@@ -1,13 +1,17 @@
 package com.example.lesson_32
 
-class FirstPresenter(private val view:Contract.View, private val list: List<String>): Contract.Presenter {
+class FirstPresenter(private val view:Contract.View) : Contract.Presenter {
 
-    private var text:String = ""
+    private var count = 0
 
 
-    override fun searchImg(text:String) {
-        if(text == "cat"){
-            view.showImg(list.random())
-        }
+    override fun plusCount() {
+        count += 1
+        view.showCount(count)
+    }
+
+    override fun minusCount() {
+        count -= 1
+        view.showCount(count)
     }
 }

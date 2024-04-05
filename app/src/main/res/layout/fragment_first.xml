@@ -4,29 +4,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-    <ImageView
-        android:layout_width="400dp"
-        android:layout_height="300dp"
-        android:id="@+id/Img"
-        />
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:id="@+id/editText"
-        android:layout_marginTop="0dp"
+        android:id="@+id/tvCount"
         android:textSize="56dp"
-        android:hint="Search text"
+        android:text="0"
         />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:id="@+id/btnShowImg"
-        android:layout_marginTop="140dp"
+        android:id="@+id/btnPlus"
+        android:layout_marginTop="100dp"
         android:textSize="56dp"
-        android:text="Show img"
+        android:text="+"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/btnMinus"
+        android:layout_marginTop="210dp"
+        android:textSize="56dp"
+        android:text="-"
         />
 
 

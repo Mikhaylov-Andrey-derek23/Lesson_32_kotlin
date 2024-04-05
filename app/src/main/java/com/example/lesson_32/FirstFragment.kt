@@ -22,23 +22,21 @@ class FirstFragment : Fragment(), Contract.View {
         return bidding?.root
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        presenter =FirstPresenter(this, listOf(
-            "https://www.treehugger.com/thmb/8L8-EYJXcD0RVbu-ydspAiH_LIM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1194409229-59d8d02e2c544734b799de766628c0c2.jpg",
-            "https://www.sydney.edu.au/content/dam/corporate/images/news-and-opinion/news/2019/october/cat-eyes.jpg",
-            "https://i.pinimg.com/originals/a6/4b/00/a64b00d0efe34985d5b1edd93bbaf366.jpg"
-
-        ))
+        presenter = FirstPresenter(this)
         setOnClickListener()
 
     }
 
     private fun setOnClickListener(){
-        bidding?.btnShowImg?.setOnClickListener {
-            presenter?.searchImg(bidding?.editText?.text.toString())
+        bidding?.btnPlus?.setOnClickListener {
+            presenter?.plusCount()
+        }
+        bidding?.btnMinus?.setOnClickListener {
+            presenter?.minusCount()
         }
     }
 
-    override fun showImg(url: String) {
-        Glide.with(requireContext()).load(url).into(bidding!!.Img)
+    override fun showCount(count: Int) {
+        bidding?.tvCount?.text = count.toString()
     }
 }
